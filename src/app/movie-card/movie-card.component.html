@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<!-- In the expression let movie of movies;, "movies" refers to the movies variable declared in the component file. -->
+<div class="movie-view" style="display: flex">
+  <mat-card *ngFor="let movie of movies; let i=index;" style="margin: 10px;">
+    <mat-card-header>
+      <mat-card-title class="movie-title">{{movie.title}}</mat-card-title>
+      <mat-card-subtitle>Directed by:<button mat-button (click)="openDirectorDialog(
+        movie.director.name,
+        movie.director.bio,
+        movie.director.birthyear)" color="primary">
+          {{movie.director.name}}
+        </button>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img src={{movie.imageURL}} alt="{{movie.title}}" style="width: 200px;
+        height: 300px;
+        object-fit: cover;" />
+    <mat-card-actions class="actions">
+      <button mat-button (click)="openGenreDialog(movie.genre.name, movie.genre.description)" color="primary">
+        Genre
+      </button>
+      <button mat-button (click)="openSynopsisDialog(movie.title, movie.description)" color="primary">
+        Synopsis
+      </button>
+      <button mat-button *ngIf="!isFav(movie._id)" (click)="addToFavoriteMovies(movie._id, movie.title)" color="primary">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button mat-button *ngIf="isFav(movie._id)" (click)="removeFromFavoriteMovies(movie._id, movie.title)" color="primary">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
