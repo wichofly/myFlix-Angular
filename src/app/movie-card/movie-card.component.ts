@@ -26,7 +26,7 @@ export class MovieCardComponent implements OnInit {
   // lifecycle hook. ngOnInit() is called when Angular is done creating the component.
   ngOnInit(): void {
     this.getMovies();
-    this.getUser()
+    this.getUser();
   }
 
   getMovies(): void {
@@ -68,7 +68,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-getUser()
+  getUser(): void {
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.favoriteMovies = resp.favoriteMovies;
+    });
+  }
 
   isFav(id: string): boolean {
     return this.favoriteMovies.includes(id);
@@ -79,9 +83,13 @@ getUser()
     this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
       console.log(result);
       this.ngOnInit();
-      this.snackBar.open('"' + title + '"' + ' has been added to your favorites.', 'OK', {
-        duration: 2000
-      });
+      this.snackBar.open(
+        '"' + title + '"' + ' has been added to your favorites.',
+        'OK',
+        {
+          duration: 2000,
+        }
+      );
     });
   }
 
@@ -90,9 +98,13 @@ getUser()
     this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
       console.log(result);
       this.ngOnInit();
-      this.snackBar.open('"' + title + '"' + ' has been removed from your favorites.', 'OK', {
-        duration: 2000
-      });
+      this.snackBar.open(
+        '"' + title + '"' + ' has been removed from your favorites.',
+        'OK',
+        {
+          duration: 2000,
+        }
+      );
     });
   }
 }
