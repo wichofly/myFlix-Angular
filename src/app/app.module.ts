@@ -63,6 +63,5 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [AppRoutingModule, WelcomePageComponent],
 })
 export class AppModule {}
