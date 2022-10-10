@@ -26,7 +26,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   /**
-   * Opers the user login dialog when login button is clicked
+   * Opens the user login dialog when login button is clicked
    */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {

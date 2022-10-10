@@ -31,7 +31,7 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Gets movies from API call and sets the movies state to return JSON file.
-   * @returns array holding movies object
+   * @returns {object[]} array holding movies
    * @function getAllMovies
    */
   getMovies(): void {
@@ -91,7 +91,7 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Gets users from API call to get their favorite movies list.
-   * @return array holding Favorite movie user's list
+   * @return {object[]} array holding Favorite movie user's list
    * @function getUser 
    */
   getUser(): void {
@@ -103,7 +103,7 @@ export class MovieCardComponent implements OnInit {
   /**
    * Checks if a movie is included in the user's list of favorite movies
    * @param id 
-   * @returns true, if the movie is a favorite movie, else false
+   * @returns {boolean} true, if the movie is a favorite movie, else false
    */
   isFav(id: string): boolean {
     return this.favoriteMovies.includes(id);
@@ -113,6 +113,7 @@ export class MovieCardComponent implements OnInit {
    * Adds a movie to the list of favorite movies via an API call
    * @param id 
    * @param title 
+   * @return {object[]} Favmovie list array
    * @function addFavoriteMovie
    */
   addToFavoriteMovies(id: string, title: string): void {
@@ -134,6 +135,7 @@ export class MovieCardComponent implements OnInit {
    * Removes a movie from the list of favorite movies via an API call
    * @param id 
    * @param title 
+   * @return {object[]} Favmovie list array
    * @function removeFavoriteMovie
    */
   removeFromFavoriteMovies(id: string, title: string): void {
