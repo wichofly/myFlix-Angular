@@ -134,3 +134,6 @@ npm install typedoc
 ```bash
 typedoc --entryPointStrategy expand ./src 
 ```
+
+## Link
+- App hosted on [github](https://wichofly.github.io/myFlix-Angular-client/)
