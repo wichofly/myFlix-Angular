@@ -21,6 +21,9 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Allows user to edit their data
+   */
   editUser(): void {
     console.log(this.userData);
     this.fetchApiData.editUser(this.userData).subscribe((result) => {

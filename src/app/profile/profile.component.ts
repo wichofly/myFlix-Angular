@@ -25,6 +25,11 @@ export class ProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Gets user data from API call and and sets the user variable to returned JSON file.
+   * @returns object holding user information
+   * @function getUser
+   */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -33,12 +38,18 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens the edit profile dialog from EditProfileComponent to allow user to edit their details
+   */
   openEditProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: '280px',
     });
   }
 
+  /**
+   * Delete user's profile, redirect to welcome screeen
+   */
   deleteProfile(): void {
     if (confirm('Are you sure you want to delete your account?')) {
       this.router.navigate(['welcome']).then(() => {
