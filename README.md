@@ -3,9 +3,9 @@
 ## Project description
 
 In this project I created the client-side using Angular from my movie-api database. In it you can register as a user and navigate through the app. You can add movies to your favorites list as well as remove them, and update your user. The app shows you important information about each movie when you click on it.
-By this project, I complete a web application (client-side and server-side [moovie-api](https://github.com/wichofly/movie-api.git)) known as MEAN (MongoDB, Express, Angular and Node.js).
+By this project, I complete a web application (client-side and server-side [movie-api](https://github.com/wichofly/movie-api.git)) known as MEAN (MongoDB, Express, Angular and Node.js).
 
-## Obejetive
+## Objective
 
 Using Angular, build the client-side for an application called myFlix based on its existing server-side code (REST API and database), with supporting documentation.
 
