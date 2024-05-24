@@ -13,6 +13,13 @@ Using Angular, build the client-side for an application called myFlix based on i
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
+You can login with the following credentials:
+
+- Username: `Testguy22` 
+- Password: `testguy22`
+
+## Development server
+
 ### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
